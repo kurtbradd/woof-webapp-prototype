@@ -1,0 +1,8 @@
+<div class="control-group">
+	<label>{{obj.title}}</label>
+	<div class="controls">
+		<label class="checkbox" ng-repeat="options in obj.options">
+			<input type="checkbox" ng-model="options.value">{{options.name}} - {{options.value}}
+		</label>
+	</div>
+</div>

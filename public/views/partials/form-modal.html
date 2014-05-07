@@ -1,0 +1,64 @@
+<div class="modal-content">
+	
+	<div class="modal-header">
+        <button type="button" class="btn btn-alert" ng-click="cancel()">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+	</div>
+
+<!--   <div class="modal-header">
+	<h3>Puppy find!</h3>
+  </div>
+ -->
+  <form ng-submit="submit()">
+	<div class="modal-body">
+		
+		<div ng-switch="getCurrentStep()">
+			<div ng-switch-when="previousDog">
+				<question-list-select  obj="questions.previousDog"></question-list-select>
+			</div>
+			<div ng-switch-when="activities">
+				<question-multi-select obj="questions.activities"></question-multi-select>
+			</div>
+			<div ng-switch-when="personality">
+	  			<question-list-select  obj="questions.personality"></question-list-select>
+			</div>
+			<div ng-switch-when="timeWithDog">
+	  			<question-list-select  obj="questions.timeWithDog"></question-list-select>
+			</div>
+			<div ng-switch-when="timeTraining">
+	  			<question-list-select  obj="questions.timeTraining"></question-list-select>
+			</div>
+			<div ng-switch-when="timeAlone">
+	  			<question-list-select  obj="questions.timeAlone"></question-list-select>
+			</div>
+			<div ng-switch-when="yardSize">
+	  			<question-list-select  obj="questions.yardSize"></question-list-select>
+			</div>
+			<div ng-switch-when="environment">
+	  			<question-list-select  obj="questions.environment"></question-list-select>
+			</div>
+			<div ng-switch-when="monthlyBudget">
+				<question-text-input   obj="questions.monthlyBudget"></question-text-input>
+			</div>
+			<div ng-switch-when="purchaseBudget">
+				<question-text-input   obj="questions.purchaseBudget"></question-text-input>
+			</div>
+			<div ng-switch-when="spay">
+				<question-list-select  obj="questions.spay"></question-list-select>
+			</div>
+			<div ng-switch-when="final">
+				<input ng-model="questions.email.value" type="text" placeholder="email" class="input-large">
+				<h3>done!</h3>
+			</div>
+		</div>
+	</div>  
+	<div class="modal-footer">
+		<button type="button" class="btn btn-warning" ng-click="handlePrevious()" ng-show="!isFirstStep()">Back</button>
+		<button type="button" class="btn btn-warning" ng-click="handleNext()">{{getNextLabel()}}</button>
+		<button type="button" class="btn btn-warning" ng-click="submit()">Submit</button>
+		<!-- <input type="submit" class="btn btn-primary" value="Submit" /> -->
+	</div>
+  </form>
+
+</div><!-- /.modal-content -->

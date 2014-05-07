@@ -1,0 +1,9 @@
+<div class="control-group">
+	<label>{{obj.title}}</label>
+	{{questions}}
+	<div class="controls">
+  		<select ng-model="obj.value" ng-options="o as o for o in obj.options">
+      		<option value="">Choose One</option>
+  		</select>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<div class="row text-right">
+	<button type="button" class="btn" ng-click="cancel()">
+		<span class="glyphicon glyphicon-remove"></span>
+	</button>
+</div>
+<h2 class="survey-question">{{getCurrentQuestion().title}}</h2>
+<div class="row">
+	<div ng-repeat="q in getCurrentQuestion().options">
+		<div ng-class="columnClassForLength(getCurrentQuestion().options.length)">
+			<button class="survey-icon" ng-click="saveAnswer(getCurrentStep(), $index)">
+				<!-- TextBox Answer -->
+				<div ng-if="q.type == 'TextBox'" class="TextBox">
+					<h2>{{q.title}}</h2>
+					<h3>{{q.sub_title}}</h3>
+				</div>
+				<!-- TitleBox Answer -->
+				<div ng-if="q.type == 'TitleBox'" class="TitleBox">
+					<h2>{{q.title}}</h2>
+				</div>
+				<!-- IconBox Answer -->
+				<div ng-if="q.type == 'IconBox'" class="IconBox">
+					<img ng-src="../img/survey/{{q.icon_name}}.png" alt="">
+					<h3>{{q.title}}</h3>
+				</div>
+			</button>
+		</div>
+	</div>
+</div>
