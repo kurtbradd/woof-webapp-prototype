@@ -253,32 +253,17 @@ module.factory('SurveyQuestions', ['$http', function($http){
 	}//end-return;
 }])
 
-module.factory('ServerSubmit', ['$http', 'Questions', '_', function($http, Questions, _){
+module.factory('ServerSubmit', ['$http', 'SurveyQuestions', '_', function($http, SurveyQuestions, _){
 	return {
 		submit : function () {
 
-			//Clean up data from Questions service
-			var questions = _.map(Questions, function(questionObj) {
-				if (questionObj.title === 'Email') { 
-					//does not modify email object
-					return questionObj;
-				}
+			var questions = _.map(SurveyQuestions, function (q_obj) {
+				return q_obj;
+			})
 
-				if(questionObj.title === 'Activities') {
-					//only return selected activities
-					var obj = _.filter(questionObj.options, function(q_obj) {
-						return q_obj.value;
-					});
-					//plucks only name key from selected activities
-					questionObj.value = _.pluck(obj, 'name');
-				};
-				return _.omit(questionObj, ['options', 'placeHolder', 'help']);
-			});
-
-			//Send back only a hash with answers (not array)
 			var prettyQuestions = {};
 			questions.forEach(function(item) {
-				prettyQuestions[item.title.toLowerCase()] = item.value;
+				prettyQuestions[item.title.toLowerCase()] = item.answer;
 			});
 
 			return $http({

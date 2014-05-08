@@ -14,7 +14,7 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		$scope.saveAnswer = function (question, $index) {
 			answer = SurveyQuestions[question].options[$index].title;
 			SurveyQuestions[question].answer = answer;
-			console.log(SurveyQuestions[question]);
+			//console.log(SurveyQuestions[question]);
 			this.handleNext();
 		}
 
@@ -66,13 +66,12 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 		
 		$scope.submit = function () {
-			// ServerSubmit.submit()
-			// .success(function(data, status, headers, config) {
-			// 	console.log(data);
-			// 	$modalInstance.dismiss('submit');
-			// })
-			// .error(function(data, status, headers, config) {
-			// 	console.log(data);
-			// });
+			ServerSubmit.submit()
+			.success(function(data, status, headers, config) {
+				console.log(data);
+			})
+			.error(function(data, status, headers, config) {
+				console.log(data);
+			});
 		}
 }]);
