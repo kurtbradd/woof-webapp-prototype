@@ -179,8 +179,8 @@ module.factory('SurveyQuestions', ['$http', function($http){
 				title:'Male'
 			},{
 				type:'IconBox',
-				icon_name:'bitch',
-				title:'Bitch'
+				icon_name:'female',
+				title:'Female'
 			},{
 				type:'IconBox',
 				icon_name:'no-gender-pref',
