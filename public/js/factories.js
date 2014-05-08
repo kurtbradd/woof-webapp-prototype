@@ -256,27 +256,6 @@ module.factory('SurveyQuestions', ['$http', function($http){
 module.factory('ServerSubmit', ['$http', 'SurveyQuestions', '_', function($http, SurveyQuestions, _){
 	return {
 		submit : function () {
-			//console.log(SurveyQuestions);
-
-			// //Clean up data from Questions service
-			// var questions = _.map(SurveyQuestions, function(questionObj) {
-			// 	if (questionObj.title === 'Email') { 
-			// 		//does not modify email object
-			// 		return questionObj;
-			// 	}
-
-			// 	if(questionObj.title === 'Activities') {
-			// 		//only return selected activities
-			// 		var obj = _.filter(questionObj.options, function(q_obj) {
-			// 			return q_obj.value;
-			// 		});
-			// 		//plucks only name key from selected activities
-			// 		questionObj.value = _.pluck(obj, 'name');
-			// 	};
-			// 	return _.omit(questionObj, ['options', 'placeHolder', 'help']);
-			// });
-
-
 			var questions = _.map(SurveyQuestions, function (q_obj) {
 				return q_obj;
 			})
@@ -286,13 +265,12 @@ module.factory('ServerSubmit', ['$http', 'SurveyQuestions', '_', function($http,
 			questions.forEach(function(item) {
 				prettyQuestions[item.title.toLowerCase()] = item.answer;
 			});
-			console.log(prettyQuestions);
 
-			// return $http({
-			// 	method:'POST',
-			// 	url:'/api/prescreen-profile/form',
-			// 	data:prettyQuestions
-			// });
+			return $http({
+				method:'POST',
+				url:'/api/prescreen-profile/form',
+				data:prettyQuestions
+			});
 		}
 	};
 }]);
