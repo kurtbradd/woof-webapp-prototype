@@ -2,6 +2,7 @@ var module = angular.module('woof-web.factories', []);
 
 module.factory('SurveyQuestions', ['$http', function($http){
 	return {
+		email:{},
 		past_dog : {
 			title: 'Have you had a dog before?',
 			answer: {},
