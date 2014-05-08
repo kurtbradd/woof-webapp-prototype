@@ -2,7 +2,10 @@ var module = angular.module('woof-web.factories', []);
 
 module.factory('SurveyQuestions', ['$http', function($http){
 	return {
-		email:{},
+		email:{
+			title:'Email',
+			answer:{}
+		},
 		past_dog : {
 			title: 'Have you had a dog before?',
 			answer: {},
@@ -257,7 +260,7 @@ module.factory('SurveyQuestions', ['$http', function($http){
 module.factory('ServerSubmit', ['$http', 'SurveyQuestions', '_', function($http, SurveyQuestions, _){
 	return {
 		submit : function () {
-
+			console.log(SurveyQuestions.email.answer);
 			var questions = _.map(SurveyQuestions, function (q_obj) {
 				return q_obj;
 			})
