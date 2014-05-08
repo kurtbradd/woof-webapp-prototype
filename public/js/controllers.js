@@ -10,6 +10,8 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		'training_time', 'grooming', 'time_alone', 'yard_size',
 		'gender', 'kids', 'purchase_price', 'monthly_budget', 'email'];
 
+		$scope.formComplete = false;
+
 		//index of answer in question options
 		$scope.saveAnswer = function (question, $index) {
 			answer = SurveyQuestions[question].options[$index].title;
@@ -42,15 +44,12 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 
 		$scope.cancel = function () {
+			$scope.formComplete = false;
 			$scope.step = 0;
 		}
 
 		$scope.isLastStep = function() {
 			return $scope.step === ($scope.steps.length - 1);
-		};
-
-		$scope.getNextLabel = function() {
-			return ($scope.isLastStep()) ? 'Submit' : 'Next'; 
 		};
 
 		$scope.handlePrevious = function() {
@@ -66,12 +65,15 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 		
 		$scope.submit = function () {
-			ServerSubmit.submit()
-			.success(function(data, status, headers, config) {
-				console.log(data);
-			})
-			.error(function(data, status, headers, config) {
-				console.log(data);
-			});
+			if (!$scope.formComplete) {
+				ServerSubmit.submit()
+				.success(function(data, status, headers, config) {
+					$scope.formComplete = true;
+					console.log(data);
+				})
+				.error(function(data, status, headers, config) {
+					console.log(data);
+				});
+			}
 		}
 }]);

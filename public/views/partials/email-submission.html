@@ -5,9 +5,13 @@
 		finding your new best friend.
 </h3>
 					
-<form class="input-group woof-input" ng-submit="submit()">
-	<input type="email" placeholder="Email Address" class="form-control" ng-model="questions.email.answer">
-	<span class="input-group-btn">
-		<button class="btn btn-default" ng-click="submit()">Enter</button>
-	</span>
+<form name="userForm" ng-submit="submit()" novalidate>
+	<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+		<div class="input-group">
+				<input type="email" name="email" class="form-control" ng-model="questions.email.answer">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="submit">Enter</button>
+				</span>
+		</div>
+	</div>
 </form>
