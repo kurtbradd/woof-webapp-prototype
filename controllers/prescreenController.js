@@ -31,5 +31,6 @@ exports.form = function (req, res) {
 
 exports.render = function (req, res) {
 	//res.send('<h1>' + req.params.id +'</h1>');
-	res.sendfile('./public/views/pre-screen-profile/index.html');
+	//res.sendfile('./public/views/pre-screen-profile/index.html');
+	res.render('pre-screen-profile/index.ejs', {name:'kurt'});
 };

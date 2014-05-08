@@ -16,6 +16,8 @@ require('./models/models')();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
+app.set('views', './public/views');
+app.set ('view engine', 'ejs');
 app.use(express.favicon('./public/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.json());
