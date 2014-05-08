@@ -1,8 +1,16 @@
-<div class="row text-right">
-	<button type="button" class="btn" ng-click="cancel()">
-		<span class="glyphicon glyphicon-remove"></span>
-	</button>
+<div class="row">
+	<div class="leftbutton">
+		<button type="button" class="btn" ng-click="cancel()">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	</div>
+	<div class="rightbutton">
+		<button type="button" class="btn" ng-click="cancel()">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	</div>
 </div>
+
 <h2 class="survey-question">{{getCurrentQuestion().title}}</h2>
 <div class="row">
 	<div ng-repeat="q in getCurrentQuestion().options">
