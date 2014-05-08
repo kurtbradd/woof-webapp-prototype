@@ -256,11 +256,11 @@ module.factory('SurveyQuestions', ['$http', function($http){
 module.factory('ServerSubmit', ['$http', 'SurveyQuestions', '_', function($http, SurveyQuestions, _){
 	return {
 		submit : function () {
+
 			var questions = _.map(SurveyQuestions, function (q_obj) {
 				return q_obj;
 			})
 
-			// //Send back only a hash with answers (not array)
 			var prettyQuestions = {};
 			questions.forEach(function(item) {
 				prettyQuestions[item.title.toLowerCase()] = item.answer;
