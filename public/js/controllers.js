@@ -66,67 +66,13 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 		
 		$scope.submit = function () {
-			//submit on ServerSubmit service
+			// ServerSubmit.submit()
+			// .success(function(data, status, headers, config) {
+			// 	console.log(data);
+			// 	$modalInstance.dismiss('submit');
+			// })
+			// .error(function(data, status, headers, config) {
+			// 	console.log(data);
+			// });
 		}
-
-		$scope.open = function () {
-			$modal.open({
-				templateUrl: '/views/partials/form-modal.html',
-				backdrop: true,
-				windowClass: 'modal',
-				controller: ModalCtrl
-			});
-		};
 }]);
-
-var ModalCtrl = function ($scope, $modalInstance, Questions, ServerSubmit) {
-	$scope.step = 0;
-	$scope.steps = [
-	'previousDog', 'activities', 'personality',
-	'timeWithDog', 'timeTraining', 'timeAlone', 'yardSize',
-	'environment', 'purchaseBudget', 'monthlyBudget', 'spay', 'final'];
-
-	$scope.questions = Questions
-
-	$scope.getCurrentStep = function() {
-		return $scope.steps[$scope.step];
-	};
-	
-	$scope.isFirstStep = function() {
-		return $scope.step === 0;
-	};
-
-	$scope.isLastStep = function() {
-		return $scope.step === ($scope.steps.length - 1);
-	};
-
-	$scope.getNextLabel = function() {
-		return ($scope.isLastStep()) ? 'Submit' : 'Next'; 
-	};
-
-	$scope.handlePrevious = function() {
-		$scope.step -= ($scope.isFirstStep()) ? 0 : 1;
-	};
-
-	$scope.handleNext = function() {
-		if($scope.isLastStep()) {
-			this.submit();
-		} else {
-			$scope.step += 1;
-		}
-	};
-	
-	$scope.submit = function () {
-		ServerSubmit.submit()
-		.success(function(data, status, headers, config) {
-			console.log(data);
-			$modalInstance.dismiss('submit');
-		})
-		.error(function(data, status, headers, config) {
-			console.log(data);
-		});
-	}
-	$scope.cancel = function () {
-		$modalInstance.dismiss('cancel');
-	}
-}
