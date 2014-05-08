@@ -253,8 +253,6 @@ module.factory('SurveyQuestions', ['$http', function($http){
 	}//end-return;
 }])
 
-
-
 module.factory('ServerSubmit', ['$http', 'Questions', '_', function($http, Questions, _){
 	return {
 		submit : function () {
