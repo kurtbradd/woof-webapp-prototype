@@ -27,6 +27,20 @@ html {
   border-style: solid;
 }
 
+.progress {
+  background: #ebedef;
+  border-radius: 32px;
+  height: 12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.progress-bar {
+  background: #1abc9c;
+  line-height: 12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .leftbutton {
   float: left;
 }
