@@ -35,6 +35,7 @@ html {
 }
 
 .survey-question {
+  margin-bottom: 20px;
   font-size: 35px
 }
 
@@ -80,8 +81,8 @@ html {
 }
 
 .jumbowoof {
-  min-width: 400px;
-  width: 50%;
+  /*min-width: 400px;*/
+  width: 640px;
   margin: 0 auto;
 
   background-color: rgba(0, 0, 0, 0.45);
@@ -91,14 +92,24 @@ html {
   padding-bottom: 20px;
 }
 
-.blue {
+.bluenav {
   background-color: rgb(58, 169, 219);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+.blue {
+  background-color: rgb(58, 169, 219);
+  border-color:  rgb(58, 169, 219);
 }
 
 .larger {
   width: 50%;
   margin: 0 auto;
+}
+
+.clearbackground {
+  background-color: rgba(0, 0, 0, 0.0);
+  border-color: rgba(0, 0, 0, 0.0);
 }
 
 .woof-input {

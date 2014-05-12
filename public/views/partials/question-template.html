@@ -1,11 +1,11 @@
 <div class="row">
 	<div class="leftbutton">
-		<button type="button" class="btn" ng-click="cancel()">
-			<span class="glyphicon glyphicon-remove"></span>
+		<button type="button" class="btn clearbackground" ng-click="handlePrevious()" ng-show="!isFirstStep() && !formComplete">
+			<span class="glyphicon glyphicon-chevron-left"></span>
 		</button>
 	</div>
 	<div class="rightbutton">
-		<button type="button" class="btn" ng-click="cancel()">
+		<button type="button" class="btn clearbackground" ng-click="cancel()">
 			<span class="glyphicon glyphicon-remove"></span>
 		</button>
 	</div>
