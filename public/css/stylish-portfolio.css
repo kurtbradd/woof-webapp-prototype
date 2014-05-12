@@ -27,6 +27,21 @@ html {
   border-style: solid;
 }
 
+.progress {
+  background: #ebedef;
+  border-radius: 32px;
+  height: 12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin-top: 20px;
+}
+.progress-bar {
+  background: rgb(58, 169, 219);
+  line-height: 12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .leftbutton {
   float: left;
 }
@@ -35,6 +50,7 @@ html {
 }
 
 .survey-question {
+  margin-bottom: 20px;
   font-size: 35px
 }
 
@@ -80,8 +96,8 @@ html {
 }
 
 .jumbowoof {
-  min-width: 400px;
-  width: 50%;
+  /*min-width: 400px;*/
+  width: 640px;
   margin: 0 auto;
 
   background-color: rgba(0, 0, 0, 0.45);
@@ -91,7 +107,17 @@ html {
   padding-bottom: 20px;
 }
 
+.bluenav {
+  background-color: rgb(58, 169, 219);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 .blue {
+  background-color: rgb(58, 169, 219);
+  border-color:  rgb(58, 169, 219);
+}
+
+.blue-hover:hover {
   background-color: rgb(58, 169, 219);
   border-color: rgba(255, 255, 255, 0.5);
 }
@@ -99,6 +125,11 @@ html {
 .larger {
   width: 50%;
   margin: 0 auto;
+}
+
+.clearbackground {
+  background-color: rgba(0, 0, 0, 0.0);
+  border-color: rgba(0, 0, 0, 0.0);
 }
 
 .woof-input {

@@ -27,13 +27,19 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		$scope.columnClassForLength = function (length) {
 			switch(length){
 				case 3:
-					return 'col-md-4';
+					return 'col-xs-4';
 				case 4:
-					return 'col-md-3';
+					return 'col-xs-3';
 				case 5:
 					return 'icon-column';
 			}
 		};
+
+		$scope.percentComplete = function () {
+			return "width: " + (($scope.step-1)/12.0)*100 + "%;";
+		};
+
+		// $scope.percentComplete = "width: " + $scope.step/12 + "%;";
 		
 		$scope.getCurrentStep = function() {
 			return $scope.steps[$scope.step];
