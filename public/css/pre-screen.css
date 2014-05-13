@@ -1,4 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+/*@import url(http://fonts.googleapis.com/css?family=PT+Sans);*/
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), 
+  local('PTSans-Regular'), 
+  url("/fonts/PTSans.woff") format('woff');
+}
 
 html, body {
   height: 100%;
@@ -21,6 +30,7 @@ h1, h2{
 }
 
 .woof-row {
+  text-align: center;
   background-color: green;
   height: 450px;
 }
@@ -68,6 +78,18 @@ h1, h2{
   border-radius: 15px;
   border-style: solid;
   display: inline-block;
+}
+
+.icon-image {
+
+}
+
+.icon-text {
+
+}
+
+.icon-time {
+
 }
 
 /*Helper selectors*/
