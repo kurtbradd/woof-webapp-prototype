@@ -26,7 +26,7 @@ exports.renderPDF = renderPDF = function renderPDF (data) {
 	console.log('new renderPDF job');	
 	var job = jobs.create('renderPDF', data);
 	job.delay(1500);
-	job.attempts(100);
+	job.attempts(20);
 	job
 	.on('complete', function (){
 		console.log('render job completed');
@@ -35,9 +35,8 @@ exports.renderPDF = renderPDF = function renderPDF (data) {
 		//sendMail will send a download link
 		//sendMail(job.data);
 	})
-	.on('failed', function (){
-		console.log('render job failed');
-		//job.state('inactive').save();
+	.on('failed', function (error){
+		console.log(error);
 		jobResponse(true, job);
 	})
 
