@@ -29,12 +29,14 @@ exports.renderPDF = renderPDF = function renderPDF (data) {
 	job.attempts(100);
 	job
 	.on('complete', function (){
+		console.log('render job completed');
 		//jobResponse(false, job);
 		//start a mail job
 		//sendMail will send a download link
 		//sendMail(job.data);
 	})
 	.on('failed', function (){
+		console.log('render job failed');
 		//job.state('inactive').save();
 		jobResponse(true, job);
 	})

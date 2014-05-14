@@ -24,10 +24,10 @@ if (cluster.isMaster) {
 
 	//process renderPDF jobs
 	jobs.process('renderPDF', function (job, done){
-		//console.log('cluster: '+cluster.worker.id + ' got job' + job.type);
-		//console.log('creating PDF for' + job.data.email);
+		console.log('cluster: '+cluster.worker.id + ' got job' + job.type);
+		console.log('creating PDF for' + job.data.email);
 		pdf.renderPrescreenProfile(job.data.id, function (err, filePath) {
-			// console.log('render returned and saving user db now');
+			console.log('render returned and saving user db now');
 			if (err) {
 				console.log(err);
 				return done && done(err);

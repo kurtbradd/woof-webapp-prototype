@@ -1,22 +1,24 @@
 var phantom = require('phantom');
 
 var session;
-phantom.create({port:3005},function (cb_session) {
+phantom.create(function (cb_session) {
 	session = cb_session;
 	console.log('session created');
 });
 
 exports.renderPrescreenProfile = function (userID, cb) {
+	console.log('renderPDF got job for id ' + userID);
 	session.createPage(function (page, err) {
 		if (err) {
 			return cb('createpage error');
 		}
 		page.set('paperSize', {format:'A4'});
 		url = 'http:localhost:3000/api/prescreen-profile/render/' + userID;
-		pathToSave = '../pdfs/' + userID + '.pdf';
+		pathToSave = 'userID' + '.pdf';
 		page.open(url, function (status) {
 			if (status === "success") {
 				page.render(pathToSave, function() {
+					console.log("renderd");
 					cb(false, pathToSave);
 				});
 			} else {
