@@ -1,7 +1,7 @@
 var webshot = require('webshot');
 
 //cb(error, filepath)
-function renderPrescreenProfile (userID, cb) {
+exports.renderPrescreenProfile = function renderPrescreenProfile (userID, cb) {
 var options = {
 	  screenSize: {
 	    width: 900,
@@ -30,6 +30,5 @@ var options = {
 
 process.once( 'SIGINT', function ( sig ) {
 	console.log('SIGINT Recieved');
-	// session.exit();
   process.exit( 0 );
 });
