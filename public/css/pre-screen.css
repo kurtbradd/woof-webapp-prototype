@@ -32,6 +32,7 @@ html {
 
 /* ROW 1 SELECTORS */
 .woof-row-1 {
+  margin-bottom: 10px;
   text-align: center;
   height: 450px;
 }
@@ -39,7 +40,6 @@ html {
 .general-info-container,
 .time-commitment-container {
   display: inline-block;
-  /*display: inline-table;*/
   margin: 12px;
   height: 450px;
   width: 410px;
@@ -66,20 +66,26 @@ html {
 }
 
 .woof-title {
-  font-size: 42px;
+  line-height: 40px;
+  font-size: 40px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-.icon-container {
+.icon-container-1 {
   width: 410px;
   height: 410px;
+  /*overflow: auto;*/
+}
+
+.icon-container-2 {
+  widows: 410px;
+  height: 205px;
 }
 
 .icon-row {
   height: 205px;
   width: 410px;
-  background-color: red;
 }
 
 /* ICON SELECTORS */
@@ -125,15 +131,20 @@ html {
 
 .icon-text h2{
   margin: 0px;
+  height: 60px;
   font-size: 28px;
 }
 
 /* ICON IMG */
-.icon-text img{
-  width: 100%;
+.icon-img img{
+  width: 100px;
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.icon-text h2{
+.icon-img h2{
   font-size: 28px;
 }
 
