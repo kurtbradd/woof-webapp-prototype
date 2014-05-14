@@ -1,7 +1,7 @@
 var phantom = require('phantom');
 
 var session;
-phantom.create(function (cb_session) {
+phantom.create({port:3005},function (cb_session) {
 	session = cb_session;
 	console.log('session created');
 });
@@ -27,6 +27,12 @@ exports.renderPrescreenProfile = function (userID, cb) {
 		});
 	});
 };
+
+process.once( 'SIGINT', function ( sig ) {
+	console.log('SIGINT Recieved');
+	session.exit();
+  process.exit( 0 );
+});
 
 // var PDFDocument = require('pdfkit');
 // var doc = new PDFDocument;
