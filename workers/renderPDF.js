@@ -1,56 +1,32 @@
-var phantom = require('phantom');
 var webshot = require('webshot');
 
-// var session;
-// phantom.create(function (cb_session) {
-// 	session = cb_session;
-// 	console.log('session created');
-// });
-
-renderPrescreenProfile();
-
+//cb(error, filepath)
 function renderPrescreenProfile (userID, cb) {
-
 var options = {
 	  screenSize: {
 	    width: 900,
-	    height: 900
+	    height: 1000
 	  }, 
 	  shotSize: {
 	    width: 'all',
 	    height: 'all'
-	  }
+	  },
+	  quality:100
 	}
-	url = "http://google.com";
-	webshot(url, 'flickr.pdf', options, function(err) {
-  	console.log(err);
+
+	url = 'http://localhost:3000/api/prescreen-profile/render/' + userID;
+	date = new Date().getTime();
+	filePath = '/pre-screen-profile/'+ userID + '_' + date +'.jpeg';
+	webshot(url, '.' + filePath, options, function(error) {
+  	if (error){
+  		cb(error);
+  		return;
+  	}
+  	else {
+  		cb(null, filePath);
+  	}
 	});	
 }
-
-
-// exports.renderPrescreenProfile = function (userID, cb) {
-// 	console.log('renderPDF got job for id ' + userID);
-// 	session.createPage(function (page, err) {
-// 		if (err) {
-// 			return cb('createpage error');
-// 		}
-// 		page.set('paperSize', {format:'A4'});
-// 		url = 'http:localhost:3000/api/prescreen-profile/render/' + userID;
-// 		pathToSave = 'userID' + '.pdf';
-// 		page.open(url, function (status) {
-// 			if (status === "success") {
-// 				page.render(pathToSave, function() {
-// 					console.log("renderd");
-// 					cb(false, pathToSave);
-// 				});
-// 			} else {
-// 				cb('cant open page error');
-// 			}
-// 			page.close();
-// 			//session.exit();
-// 		});
-// 	});
-// };
 
 process.once( 'SIGINT', function ( sig ) {
 	console.log('SIGINT Recieved');
