@@ -12,7 +12,17 @@ exports = module.exports = function(app) {
 	});
 
 	//Serve Angular Application
-	app.get('*', function (req, res) {
+	app.get('/buyer-prescreen', function (req, res) {
 		res.sendfile('./public/views/index.html');
 	});
+
+	app.get('/', function (req, res){
+		res.sendfile('./public/views/landing_page/index-app.html');
+	})
+
+	//Catchall
+	app.get('*', function (req, res){
+		res.redirect('/');
+	});
+
 }
