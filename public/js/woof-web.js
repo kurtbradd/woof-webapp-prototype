@@ -11,13 +11,13 @@ var app = angular.module('woof-web', dependencies)
 app.config(['$routeProvider', '$locationProvider',
 	function($routeProvider, $locationProvider) {
 		$routeProvider
-			.when('/', {
+			.when('/buyer-prescreen', {
 				templateUrl:'./views/landingpage.html',
 				controller:'LandingPageCtrl'
-			})
-			.otherwise({
-				redirectTo:'/'
 			});
+			// .otherwise({
+			// 	redirectTo:'/'
+			// });
 		$locationProvider.html5Mode(true);
 }]);
 
