@@ -8,6 +8,8 @@ To Run:
 Install NPM Dependencies
 npm install
 
+create keys.js
+
 sudo mongod (starts mongo)
 redis-server (starts redis)
 node worker.js (from worker directory)
