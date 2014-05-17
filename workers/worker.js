@@ -52,36 +52,44 @@ else {
 		ScreenedUser.findById(job.data.id, function(err, user) {
 			if (err) {
 				done && done (err);
-			} else {
-				pdf_path = user.pdf_path;
-				//render email here
-				mailOptions = {
-					from:'Dan @ Woof Labs <hello@wooflabs.com>',
-					to:user.email,
-					subject:'You Buyer Profile has arrived!',
-					text:'Sample Text'
-				};
-				mailer.sendMail(config.mailer, mailOptions, function(error, response){
+			} 
+			else {
+				context = {
+					pdf_path:user.pdf_path
+				}
+				console.log(user.pdf_path);
+				mailer.renderEmail('prescreenTemplate.html', context, function(error, html) {
 					if (error) {
-						console.log('error sending email');
-						done && done(error);
+						done && done (error)
 						return;
 					}
-					console.log('email sent');
-					user.email_sent = true;
-					user.save(function(err, user) {
-						if (err) {
-							console.log('failed to update user');
-							done && done(err);
-						} else {
-							console.log('user model updated');
-							done && done();
+					mailOptions = {
+						from:'Dan @ Woof Labs <hello@wooflabs.com>',
+						to:user.email,
+						subject:'You Buyer Profile has arrived!',
+						html:html
+					};
+					mailer.sendMail(config.mailer, mailOptions, function(error, response){
+						if (error) {
+							console.log('error sending email');
+							done && done(error);
+							return;
 						}
-					});
-				})
+						console.log('email sent');
+						user.email_sent = true;
+						user.save(function(err, user) {
+							if (err) {
+								console.log('failed to update user');
+								done && done(err);
+							} else {
+								console.log('user model updated');
+								done && done();
+							}
+						});
+					})
+				});
 			}
-		});//user query
-
+		});
 	});
 }
 
