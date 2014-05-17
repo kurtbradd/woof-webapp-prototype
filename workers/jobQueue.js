@@ -15,7 +15,6 @@ exports.sendMail = sendMail = function sendMail (data) {
 		jobResponse(false, job);
 	})
 	.on('failed', function (){
-		//job.state('inactive').save();
 		jobResponse(true, job);
 	})
 
@@ -29,14 +28,10 @@ exports.renderPDF = renderPDF = function renderPDF (data) {
 	job.attempts(20);
 	job
 	.on('complete', function (){
-		console.log('render job completed');
-		//jobResponse(false, job);
-		//start a mail job
-		//sendMail will send a download link
-		//sendMail(job.data);
+		jobResponse(false, job);
+		sendMail(job.data);
 	})
-	.on('failed', function (error){
-		console.log(error);
+	.on('failed', function (){
 		jobResponse(true, job);
 	})
 
