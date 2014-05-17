@@ -17,7 +17,7 @@ var options = {
 	url = 'http://localhost:3000/api/prescreen-profile/render/' + userID;
 	date = new Date().getTime();
 	filePath = '/pre-screen-profile/'+ userID + '_' + date +'.jpeg';
-	webshot(url, '.' + filePath, options, function(error) {
+	webshot(url, './workers' + filePath, options, function(error) {
   	if (error){
   		cb(error);
   		return;
