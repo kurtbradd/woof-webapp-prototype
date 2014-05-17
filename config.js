@@ -4,7 +4,7 @@ module.exports = {
 	mailer: {
 	service: "Gmail",
 		auth: {
-				user: "kurtbradd@gmail.com",
+				user: "hello@wooflabs.com",
 				pass: keys.gmail
 		}
 	},
