@@ -13,6 +13,7 @@ else {
 
 	console.log('Cluster Worker PID: '+ process.pid);
 	var pdf = require('./renderPDF.js')
+	var mailer = require('./mailer.js')
 	var	kue = require('kue'),
 	jobs = kue.createQueue();
 
@@ -36,7 +37,6 @@ else {
 							if (err) {
 								done && done(err);
 							} else {
-								console.log(user);
 								done && done();
 							}
 						});
@@ -48,11 +48,40 @@ else {
 
 	// SEND MAIL JOB
 	jobs.process('sendMail',1, function (job, done){
-		console.log('cluster: '+cluster.worker.id + ' got job' + job.type);
+		//console.log('cluster: '+cluster.worker.id + ' got job' + job.type);
+		ScreenedUser.findById(job.data.id, function(err, user) {
+			if (err) {
+				done && done (err);
+			} else {
+				pdf_path = user.pdf_path;
+				//render email here
+				mailOptions = {
+					from:'Dan @ Woof Labs <hello@wooflabs.com>',
+					to:user.email,
+					subject:'You Buyer Profile has arrived!',
+					text:'Sample Text'
+				};
+				mailer.sendMail(config.mailer, mailOptions, function(error, response){
+					if (error) {
+						console.log('error sending email');
+						done && done(error);
+						return;
+					}
+					console.log('email sent');
+					user.email_sent = true;
+					user.save(function(err, user) {
+						if (err) {
+							console.log('failed to update user');
+							done && done(err);
+						} else {
+							console.log('user model updated');
+							done && done();
+						}
+					});
+				})
+			}
+		});//user query
 
-		//send email with pdf download link in an email
-		console.log('creating mail for ' + job.data.email);
-		done && done();
 	});
 }
 
