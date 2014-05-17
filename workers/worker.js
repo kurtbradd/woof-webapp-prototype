@@ -20,9 +20,8 @@ else {
 	mongoose.connect(config.database.url);
 	var ScreenedUser = require('../models/screenedUser.js');
 
-
-	jobs.process('renderPDF', function (job, done){
-		//console.log('cluster: '+cluster.worker.id + ' got job' + job.type);
+	// RENDER PDF JOB
+	jobs.process('renderPDF',1, function (job, done){
 		pdf.renderPrescreenProfile(job.data.id, function (err, filePath) {
 			if (err) {
 				done && done(err);
@@ -37,6 +36,7 @@ else {
 							if (err) {
 								done && done(err);
 							} else {
+								console.log(user);
 								done && done();
 							}
 						});
@@ -46,8 +46,8 @@ else {
 		});
 	});
 
-	//process sendMail jobs
-	jobs.process('sendMail', function (job, done){
+	// SEND MAIL JOB
+	jobs.process('sendMail',1, function (job, done){
 		console.log('cluster: '+cluster.worker.id + ' got job' + job.type);
 
 		//send email with pdf download link in an email
