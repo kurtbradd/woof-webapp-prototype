@@ -6,11 +6,12 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var mongoose = require('mongoose'); 
+var mongoose = require('mongoose');
+var config = require('./config'); 
 
 var app = express();
 
-var db = mongoose.connect('mongodb://localhost:27017/woof-web');
+var db = mongoose.connect(config.database.url);
 //Models
 require('./models/models')();
 

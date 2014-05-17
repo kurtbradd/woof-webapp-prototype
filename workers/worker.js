@@ -1,5 +1,6 @@
 var cluster = require('cluster')
 var clusterWorkerSize = require('os').cpus().length;
+var config = require('../config');
 
 if (cluster.isMaster) {
 	console.log('Master Worker PID: '+ process.pid);
@@ -16,7 +17,7 @@ else {
 	jobs = kue.createQueue();
 
 	var mongoose = require('mongoose')
-	mongoose.connect('mongodb://localhost:27017/woof-web');
+	mongoose.connect(config.database.url);
 	var ScreenedUser = require('../models/screenedUser.js');
 
 
