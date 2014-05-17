@@ -9,13 +9,12 @@ exports.sendMail = sendMail = function sendMail (data) {
 	console.log('new sendMail job');	
 	var job = jobs.create('sendMail', data);
 	job.delay(500);
-	job.attempts(100);
+	job.attempts(20);
 	job
 	.on('complete', function (){
 		jobResponse(false, job);
 	})
 	.on('failed', function (){
-		//job.state('inactive').save();
 		jobResponse(true, job);
 	})
 
@@ -25,17 +24,14 @@ exports.sendMail = sendMail = function sendMail (data) {
 exports.renderPDF = renderPDF = function renderPDF (data) {
 	console.log('new renderPDF job');	
 	var job = jobs.create('renderPDF', data);
-	job.delay(1500);
-	job.attempts(100);
+	job.delay(500);
+	job.attempts(20);
 	job
 	.on('complete', function (){
-		//jobResponse(false, job);
-		//start a mail job
-		//sendMail will send a download link
-		//sendMail(job.data);
+		jobResponse(false, job);
+		sendMail(job.data);
 	})
 	.on('failed', function (){
-		//job.state('inactive').save();
 		jobResponse(true, job);
 	})
 
@@ -48,8 +44,10 @@ jobs.on('job complete', function(id){
 		if (err)
 			return;
     	job.remove(function(err){
-    		if (err) throw err;
-      		//console.log('removed completed job #%d', job.id);
+    		if (err) {
+    			return;
+    		}
+      	console.log('removed completed job #%d', job.id);
     	});
   	});
 });

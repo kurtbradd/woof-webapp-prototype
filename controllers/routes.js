@@ -11,8 +11,24 @@ exports = module.exports = function(app) {
 		res.send('Working');
 	});
 
-	//Serve Angular Application
-	app.get('*', function (req, res) {
+	//Download Prescreen Form
+	app.get('/pre-screen-profile/:filepath', function (req, res) {
+		res.download('./workers/pre-screen-profile/' + req.params.filepath);
+	});
+
+	//Serve Prescreen Form
+	app.get('/buyer-prescreen', function (req, res) {
 		res.sendfile('./public/views/index.html');
 	});
+
+	//Server Homepage
+	app.get('/', function (req, res){
+		res.sendfile('./public/views/landing_page/index-app.html');
+	})
+
+	//Catchall
+	app.get('*', function (req, res){
+		res.redirect('/');
+	});
+
 }

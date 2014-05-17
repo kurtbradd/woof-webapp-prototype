@@ -71,7 +71,7 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 		
 		$scope.submit = function () {
-			if (!$scope.formComplete) {
+			// if (!$scope.formComplete) {
 				ServerSubmit.submit()
 				.success(function(data, status, headers, config) {
 					$scope.formComplete = true;
@@ -80,6 +80,6 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 				.error(function(data, status, headers, config) {
 					console.log(data);
 				});
-			}
+			// }
 		}
 }]);
