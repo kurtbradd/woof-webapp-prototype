@@ -65,6 +65,7 @@ else {
 					}
 					mailOptions = {
 						from:'Dan @ Woof Labs <hello@wooflabs.com>',
+						replyTo:'hello@wooflabs.com',
 						to:user.email,
 						subject:'You Buyer Profile has arrived!',
 						html:html
