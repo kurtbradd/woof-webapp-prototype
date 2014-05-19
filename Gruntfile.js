@@ -29,18 +29,29 @@ module.exports = function (grunt) {
                     '<%= project.dist %>/scripts/scripts.js': ['<%= project.dist %>/scripts/scripts.js']
                 }
             }
-        }
+        },
+        cssmin: {
+              minify: {
+                expand: true,
+                cwd: 'public/views/landing_page/css/',
+                src: ['*.css', '!*.min.css'],
+                dest: 'release/css/',
+                ext: '.min.css'
+              }
+            }
     });
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('build', [
         'concat',
         'uglify'
     ]);
 
+    grunt.registerTask('minifyCss', ['cssmin']);
+    grunt.registerTask('min', ['min']);
 
     grunt.registerTask('default', ['build']);
 
