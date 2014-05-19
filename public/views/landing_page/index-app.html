@@ -14,12 +14,12 @@
     <title>Woof | Adopt A Puppy</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./views/landing_page/css/woof.css" rel="stylesheet">
+    <link href="./views/landing_page/css/bootstrap-3.1.css" rel="stylesheet">
     <link href="./views/landing_page/css/bootstrap.css" rel="stylesheet">
     <link href="./views/landing_page/css/theme.css" rel="stylesheet">
+    <link href="./views/landing_page/css/woof.css" rel="stylesheet">
 
-
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="./views/landing_page/css/magnific-popup.css" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -39,26 +39,58 @@
 
   <body>
 
-    <div class="preloader">
-       <div class="spinner">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
-        </div>
+    <div id="SilverModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Silver Plan <sup><sup>$</sup>19</sup></h2>
+        <p>Awesome! You already know what breed you want for your puppy. We know how much of a hastle it can be finding a quality breeder, that is why we are here. Will save you the time and connect you with a Woof Certified Breeder who will provide you with your perfect healthy puppy.</p>
+        <div class="text-center"> <p><button type="button"  class="btn btn-primary">Get Started</button></p></div>
+      </div>
+    </div>
+    <div id="GoldModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Gold Plan <sup><sup>$</sup>39</sup></h2>
+        <p>Whether you are getting your first dog or you've had one before, our team of professional dog trainers analyize your buyer profile and our 1-on-1 phone-call, to help you pick your perfect breed.</p>
+        <p>Once you've decided your breed, we match you up with a Woof certified breeder to connect you with your perfect puppy.</p>
+        <div class="text-center"> <p><button type="button"  class="btn btn-primary">Get Started</button></p></div>
+      </div>
+    </div>
+    <div id="PlatinumModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Platinum Plan <sup><sup>$</sup>139<sub><sup><sub>and up</sub></sup></sub></sup></h2>
+        <p>Whether you are getting your first dog or you've had one before, our team of professional dog trainers analyize your buyer profile and our 1-on-1 phone-call, to help you pick your perfect breed.</p>
+        <p>Once you've decided your breed, we match you up with a Woof certified breeder to connect you with your perfect puppy.</p>
+        <p>We make sure you are fully prepared for your puppy by delivering all the goods you need. These include a fitted crate, leash, toys, treats and a month's worth of premium dog food. </p>
+        <div class="text-center"> <p><button type="button"  class="btn btn-primary">Get Started</button></p></div>
+      </div>
+    </div>
+    <div id="ShelterModal" class="modalDialog">
+      <div>
+        <h2>How are we helping shelters?</h2>
+        <p>In North America there are an estimated 6-8 million dogs & cats brought to shelters every year. It is sad to say that around half of the dogs brought to shelters are euthanized. We are stop the problem at its roots.</p>
+        <p>Many of the euthanizations could have been prevented. The ones we are working towards stopping are from puppymills and dogs brought to shelters due to a bad match betweens the dog's breed and owner.</p>
+        <p> We beleive that a professional service connecting invidiuals with the right breed & quality breeders will reduce the burden on the shelters and lessen dog euthanizations</p>
+        <div class="text-center"> <p> <a href="#close" title="Close"><button type="button"  class="btn btn-primary">Back</button></a></p></div>
+      </div>
+    </div>
+    <div id="BreederModal" class="modalDialog">
+      <div>
+        <h2>What Is a Woof Certified Breeder?</h2>
+        <p>We know dog's health is important to you. That is why you are not going to get your dog from any breeder. You want your dog from an award winning breeder who has passed their breed specific health tests for their dogs.</p>
+        <p>Amoung the health tests, you want to make sure that your puppy was raised in welcoming environment that encourages each litter to the right amount of socialization and time with their mom</p>
+        <p>We screen every breeder that we work with to ensure that you are getting a healthy puppy from a quality breeder.</p>
+      
+        <div class="text-center"> <p> <a href="#close" title="Close"><button type="button"  class="btn btn-primary">Back</button></a></p></div>
+      </div>
     </div>
 
     <!-- NAVBAR
     ================================================== -->
     <div class="navbar-wrapper cbp-af-header">
       <div class="container">
-                  <div id="openModal" class="modalDialog">
-                    <div>
-                      <a href="#close" title="Close" class="close">X</a>
-                      <h2>Modal Box</h2>
-                      <p>This is a sample modal box that can be created using the powers of CSS3.</p>
-                      <p class="btnModal2"><a href="#close">More Info</a></p>
-                    </div>
-                  </div>
+
         <!-- Fixed navbar -->
         <div class="navbar cbp-af-inner" role="navigation">
           <div class="container">
@@ -69,18 +101,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand scroll" href="#intro"><img src="./views/landing_page/img/woof-logo.png"></a>
+              <a class="navbar-brand scroll" href="#intro"><img style="max-width:150px; max-height:200px;" src="./views/landing_page/img/woof-logo.png"></a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav pull-right">
                 <li><a href="#about">About</a></li>
                 <li><a href="#featured1">Features</a></li>
-                <li class="hidden-sm"><a href="#testimonials">Testimonials</a></li>
+               <!--  <li class="hidden-sm"><a href="#testimonials">Testimonials</a></li> -->
                 <li><a href="#pricing">Pricing</a></li>
-<!--                <li><a class="hidden-sm login" href="#">Login</a></li>
+              <!-- <li><a class="hidden-sm login" href="#">Login</a></li>
                 <li><a class="signup" href="#">Sign up</a></li>
-              -->
-              </ul>
+              --> </ul>
             </div>
           </div>
         </div>
@@ -98,8 +129,8 @@
               <div class="carousel-caption-center colour-white">
                 <h2>Looking for a dog?</h2>
                 <h1>Adopt your perfect puppy.</h1>
-                <p>Woof simplifies the process when you are looking to buy puppy</p>
-                <p><a class="btn btn-lg btn-primary signup" href="#" role="button">Get started</a></p>
+                <p>Woof simplifies the process when you are looking to buy a puppy</p>
+                <p><a class="scroll" href="#about"> <button  type="button" class="btn btn-primary btn-lg">Get Started</button></a></p>
               </div>
             </div>
           </div>
@@ -117,6 +148,7 @@
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-12 overlay-text">
+            <br>
             <h4>Ready to buy a puppy?</h4>
             <h2>We take care of the difficult tasks.</h2>
           </div><!-- /.col-lg-12 -->
@@ -127,7 +159,7 @@
             <div class="icon-wrapper">
               <i class="fa fa-search icon-large"></i>
             </div>
-            <h3>Breeds</h3>
+            <h3>Trainers</h3>
             <p>Our team of professional trainers help you pick the right breed.</p>
           </div>
           <div class="col-sm-4 text-center overlay-text icons">
@@ -161,8 +193,8 @@
           <div class="col-sm-5 overlay-text">
             <div class="vertical-align">
               <h2>Why Is It Important To Pick The Right Breed?</h2>
-              <p>Millions of dogs are brought to shelters every year, many of them are there because the dog breed wasn't a good fit. Our team of professional trainers ensures that wont happen to you, by analyzing your situation and suggesting the breeds that will be best for your lifestyle.</p>
-              <p>Read more about our position on shelters here.</p>
+              <p class="text-plus">Millions of dogs are brought to shelters every year, many of them are there because the dog breed wasn't a good fit. Our team of professional trainers ensures that wont happen to you, by analyzing your situation and suggesting the breeds that will be best for your lifestyle.</p>
+              <p>Read more about our position on shelters <a href="#ShelterModal" class="text-white">here</a>.</p>
             </div>
           </div>
         </div>
@@ -184,147 +216,13 @@
             <div class="vertical-align">
               <h2>How to pick a breeder?</h2>
               <p>The ASPCA estimates that over two million dogs are purchased every year through puppy mills. We are tackeling this problem by connecting you with the best dog breeders across North America. They have raised their puppies in nourishing environments and have all passed their breed specfic health tests.</p>
-              <p>Read more about Woof certified breeder program here</p>
+              <p>Read more about Woof certified breeder program <a href="#BreederModal" class="text-white">here</a>.</p>
             </div>
           </div>
         </div>
       </div>
 
     </section>
-
-
-    <!-- Testimonials
-    ================================================== -->
-<!--     <section id="testimonials" class="dark">
-
-      <div class="page-header text-center">
-        <h3>Testimonials</h3>
-        <h2>What People are saying</h2>
-      </div>
-
-      <div class="container">
-
-        <div class='row'>
-          <div class='col-md-offset-2 col-md-8'>
-            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-            
-              <ol class="carousel-indicators">
-                <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#quote-carousel" data-slide-to="1"></li>
-                <li data-target="#quote-carousel" data-slide-to="2"></li>
-              </ol>
-              
-              
-              <div class="carousel-inner">
-              
-                
-                <div class="item active">
-                  <blockquote>
-                    <div class="row">
-                      <div class="col-sm-3 text-center">
-                        <img class="img-circle" src="img/user-avatar1.jpg">
-                      </div>
-                      <div class="col-sm-9">
-                        <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!"</p>
-                        <small>David Parrelli - <a href="http://www.twitter.com/dparrelli" target="_blank">@dparrelli</a></small>
-                      </div>
-                    </div>
-                  </blockquote>
-                </div>
-                
-                <div class="item">
-                  <blockquote>
-                    <div class="row">
-                      <div class="col-sm-3 text-center">
-                        <img class="img-circle" src="img/user-avatar2.jpg">
-                      </div>
-                      <div class="col-sm-9">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris."</p>
-                        <small>Working Nomads - <a href="http://www.workingnomads.co" target="_blank">@workingnomads</a></small>
-                      </div>
-                    </div>
-                  </blockquote>
-                </div>
-                
-                <div class="item">
-                  <blockquote>
-                    <div class="row">
-                      <div class="col-sm-3 text-center">
-                        <img class="img-circle" src="img/user-avatar3.jpg">
-                      </div>
-                      <div class="col-sm-9">
-                        <p>"As a professional trainer, I am happy to be helping with advising Woof's buyers on the best breeds for them. Picking the breed can make or break your experience with your dog."</p>
-                        <small>Working Nomads - <a href="http://www.workingnomads.co" target="_blank">@workingnomads</a></small>
-                      </div>
-                    </div>
-                  </blockquote>
-                </div>
-              </div>
-              
-              
-              <a data-slide="prev" href="#quote-carousel" class="left carousel-control visible-md visible-lg"><i class="fa fa-chevron-left"></i></a>
-              <a data-slide="next" href="#quote-carousel" class="right carousel-control  visible-md visible-lg"><i class="fa fa-chevron-right"></i></a>
-            </div>                          
-          </div>
-        </div>
-        </div>
-      </div>
-
-    </section> -->
-
-
-    <!-- Gallery
-    ================================================== -->
-    <!-- <section id="gallery">
-
-      <div class="page-header text-center">
-        <h3>Screenshots</h3>
-        <h2>Here's a sneak peek</h2>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div id="owl-example" class="owl-carousel">
-              <div class="item">
-                <a href="img/thumbs/thumb1.jpg" class="popup-gallery">
-                  <img src="img/thumbs/thumb1.jpg" alt="Prestige Portfolio Thumbnail Image">
-                </a>
-              </div>
-              <div class="item">
-                <a href="img/thumbs/thumb2.jpg" class="popup-gallery">
-                  <img src="img/thumbs/thumb2.jpg" alt="Prestige Portfolio Thumbnail Image">
-                </a>
-              </div>
-              <div class="item">
-                <a href="img/thumbs/thumb3.jpg" class="popup-gallery">
-                  <img src="img/thumbs/thumb3.jpg" alt="Prestige Portfolio Thumbnail Image">
-                </a>
-              </div>
-              <div class="item">
-                <a href="img/thumbs/thumb4.jpg" class="popup-gallery">
-                  <img src="img/thumbs/thumb4.jpg" alt="Prestige Portfolio Thumbnail Image">
-                </a>
-              </div>
-              <div class="item">
-                <a href="img/thumbs/thumb5.jpg" class="popup-gallery">
-                  <img src="img/thumbs/thumb5.jpg" alt="Prestige Portfolio Thumbnail Image">
-                </a>
-              </div>
-              <div class="item">
-                <a href="img/thumbs/thumb6.jpg" class="popup-gallery">
-                  <img src="img/thumbs/thumb6.jpg" alt="Prestige Portfolio Thumbnail Image">
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-    -->
-
 
     <!-- Pricing
     ================================================== -->
@@ -347,7 +245,7 @@
 
                   <ul class="plan-features">
                     <li><strong>Buyer Profile PDF</strong></li>
-                    <li>Breeder Selection Tips</li>
+                    <li><strong>Breeder Selection Tips</strong></li>
                     <li>Join The Woof Community</li>
                   </ul>
                   <div class="plan-cta">
@@ -365,11 +263,11 @@
 
                   <ul class="plan-features">
                     <li><strong>Certified Breeder Intros</strong></li>
-                    <li>Buyer Profile PDF</li>
-                    <li>Guaranteed Puppy Match</li>
+                    <li><strong>Guaranteed Puppy Match</strong></li>
+                    <li><strong>+</strong> Bronze Plan</li>
                   </ul>
                   <div class="plan-cta">
-                    <p class="plan-buy"><a href="index.html" class="btn">More Info</a></p>
+                    <p class="plan-buy"><a href="#SilverModal" class="btn">More Info</a></p>
                  </div>
                 </div>
               </div>
@@ -383,11 +281,11 @@
 
                   <ul class="plan-features">
                     <li><strong>Profressional Breed Fitting</strong></li>
-                    <li>Certified Breeder Intros</li>
-                    <li>Guaranteed Puppy Match</li>
+                    <li><strong>1-On-1 Phone Care</strong></li>
+                    <li><strong>+</strong> Silver Plan</li>
                   </ul>
                   <div class="plan-cta">
-                    <p class="plan-buy"><a href="index.html" class="btn">More Info</a></p>
+                    <p class="plan-buy"><a href="#GoldModal" class="btn">More Info</a></p>
                  </div>
                 </div>
               </div>
@@ -400,12 +298,12 @@
                   </div>
 
                   <ul class="plan-features">
-                    <li><strong>Gold Plan Plus...</strong></li>
-                    <li>Crate & Leash</li>
-                    <li>Toys & Treats</li>
+                    <li><strong>Crate & Leash</strong></li>
+                    <li><strong>Toys & Treats</strong></li>
+                    <li><strong>+</strong> Gold Plan</li>
                   </ul>
                   <div class="plan-cta">
-                    <p class="plan-buy"><a href="#openModal" class="btn">More Info</a></p>
+                    <p class="plan-buy"><a href="#PlatinumModal" class="btn">More Info</a></p>
                  </div>
                 </div>
               </div>
@@ -425,7 +323,7 @@
         <div class="row">
           <div class="col-lg-12">
             <h2>Get your <strong>free</strong> puppy buyer profile now.</h2>
-            <p><a href="#" class="btn signup" role="button">Get started</a></p>
+            <p><a href= "#about" class="btn signup" role="button">Get started</a></p>
           </div>
         </div>
 
@@ -440,62 +338,31 @@
 
       <div class="container">    
         <div class="row">
-          <div class="col-lg-12">
-            <div class="footer-logo text-center">
-              <h2>Woof</h2>
-              <p>250 Sandringham Dr</p>
-              <p>Toronto, Ontario</p>
-              <br>
-              <p class="muted">© 2014 Woof Labs, Inc.</p>
+           <div class="col-lg-12">
+            <div class="col-sm-4 col-md-4">
             </div>
-          </div>
-        </div>
+            <div class="col-sm-4 col-md-4">
+              <div class="footer-logo text-center">
+                <img style="max-width:200px; max-height:200px;" style="center" src="./views/landing_page/img/woof-logo.png">
+                <br><br>
+                <p>   Made with love in Toronto, Canada.</p>
+                <p>  © 2014 Woof Labs Inc.</p>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+            </div>
+
         <div class="row">
           <div class="col-lg-12 text-center">
-            <a class="icon" href="http://www.twitter.com/MyDogWoofs" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a class="icon" href="https://www.facebook.com/my.dog.WooFs" target="_blank"><i class="fa fa-facebook"></i></a>
-          </div>
+            <a class="icon" href="http://www.twitter.com/mydogwoofs" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a class="icon" href="http://www.facebook.com/mydogwoofs" target="_blank"><i class="fa fa-facebook"></i></a>
+            <!-- <a class="icon" href="http://www.dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+            <a class="icon" href="http://www.workingnomads.co" target="_blank"><i class="fa fa-globe"></i></a>
+ -->          </div>
         </div>
       </div>
 
 		</footer>
-
-    <div id="login" class="overlay overlay-content">
-  
-      <button type="button" class="overlay-close">Close</button>
-      <section class="login-part">
-        <p class="login-overlay">
-          Log In
-        </p>
-        <form method="post">
-          <input class="form-control" type="email" name="u" placeholder="Email" required="required" />
-          <input class="form-control" type="password" name="p" placeholder="Password" required="required" />
-          <button type="submit" class="btn btn-primary btn-block btn-large">Log me in</button>
-          <a href="#" class="forgot-pw">Forgot password? We can help!</a>
-        </form>
-       </section>
-      
-    </div>
-
-    <div id="signup" class="overlay overlay-content">
-  
-      <button type="button" class="overlay-close">Close</button>
-      <section class="login-part">
-        <p class="login-overlay">
-          Sign up to Woof
-        </p>
-        <form method="post">
-          <input class="form-control" type="text" name="email" placeholder="Email" required="required" />
-          <input class="form-control" type="password" name="pw" placeholder="Password" required="required" />
-          <input class="form-control" type="password" name="repeat-pw" placeholder="Repeat Password" required="required" />
-          <button type="submit" class="btn btn-primary btn-block btn-large">Get started</button>
-          <p class="disclaimer">By signing up, you agree with our <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a></p>
-        </form>
-       </section>
-      
-    </div>
-
- 
   
     <!-- Bootstrap core JavaScript
     ================================================== -->

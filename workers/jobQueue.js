@@ -29,7 +29,7 @@ exports.renderPDF = renderPDF = function renderPDF (data) {
 	job
 	.on('complete', function (){
 		jobResponse(false, job);
-		sendMail(job.data);
+		// sendMail(job.data);
 	})
 	.on('failed', function (){
 		jobResponse(true, job);
