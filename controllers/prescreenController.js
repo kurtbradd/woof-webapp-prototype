@@ -18,7 +18,7 @@ exports.form = function (req, res) {
 		if (err) {
 			return res.json(400, err);
 		}
-		res.send(201);
+		res.send(200);
 		//create job for worker
 		var job = {
 			id:user._id,
