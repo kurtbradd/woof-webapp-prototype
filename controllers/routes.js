@@ -6,27 +6,22 @@ exports = module.exports = function(app) {
 	app.post('/api/prescreen-profile/form', prescreenController.form);
 	app.get('/api/prescreen-profile/render/:id', prescreenController.render);
 
-	//Test server is up
-	app.get('/test', function (req, res) {
-		res.send('Working');
-	});
-
-	//Download Prescreen Form
+	//Download Prescreen Form (email download link)
 	app.get('/pre-screen-profile/:filepath', function (req, res) {
 		res.download('./workers/pre-screen-profile/' + req.params.filepath);
 	});
 
-	//Serve Prescreen Form
+	//Serve Prescreen Application
 	app.get('/buyer-prescreen', function (req, res) {
 		res.sendfile('./public/views/index.html');
 	});
 
-	//Server Homepage
+	//Homepage
 	app.get('/', function (req, res){
 		res.sendfile('./public/views/landing_page/index-app.html');
 	})
 
-	//Catchall
+	//Catchall - redirect to Homepage
 	app.get('*', function (req, res){
 		res.redirect('/');
 	});

@@ -5,7 +5,7 @@ exports.renderPrescreenProfile = function renderPrescreenProfile (userID, cb) {
 var options = {
 	  screenSize: {
 	    width: 900,
-	    height: 1000
+	    height: 900
 	  }, 
 	  shotSize: {
 	    width: 'all',
