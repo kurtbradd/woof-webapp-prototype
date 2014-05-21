@@ -20,6 +20,10 @@ html {
   overflow: auto;
 }
 
+.small {
+  font-size: 40px !important;
+}
+
 .container-fluid {
   padding-top: 50px;
 }

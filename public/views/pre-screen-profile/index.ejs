@@ -15,7 +15,6 @@
 </head>
 
 <body>
-	<!-- <h1><%=name%></h1>    -->
 <div class="woof-header">
 
 	<div class="navbar navbar-inverse navbar-fixed-top bluenav" role="navigation">
@@ -39,35 +38,76 @@
 				<div class="row text-center">
 					<h1 class="title">General Info</h1>
 				</div>
-				<!-- ICON ROW -->
+				<!-- ICON ROW :: PAST/ACTIVITIES-->
 				<div class="row icon-row">
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<img src="/img/survey/male.png" alt="" class="img-rounded">
-							<h3 class="icon-img">Companion</h3>
+							<% if (context.previous_dog == 'Yes!') { %>
+							<h2 class="icon-text">Yes!</h2>
+							<h3 class="icon-text">I've had a pet before!</h3>
+							<% } %>
+							<% if (context.previous_dog == 'Not Yet') { %>
+							<h2 class="icon-text">Dogs</h2>
+							<h3 class="icon-text">This is my first pet!</h3>
+							<% } %>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h2 class="icon-text">Yes!</h2>
-							<h3 class="icon-text">I've had a pet before!</h3>
+							<% if (context.activities == 'Companion') { %>
+							<img src="/img/survey/companion.png" alt="" class="img-rounded">
+							<% } %>
+							<% if (context.activities == 'Couch Buddy') { %>
+							<img src="/img/survey/couch.png" alt="" class="img-rounded">
+							<% } %>
+							<% if (context.activities == 'Run / Hikes') { %>
+							<img src="/img/survey/run.png" alt="" class="img-rounded">
+							<% } %>
+							<% if (context.activities == 'Competing') { %>
+							<img src="/img/survey/trophy.png" alt="" class="img-rounded">
+							<% } %>
+							<h3 class="icon-img"><%= context.activities %></h3>
 						</div>
 					</div>
 				</div>
-				<!-- ICON ROW -->
+				<!-- ICON ROW :: YARD/KIDS-->
 				<div class="row icon-row">
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h1 class="icon-time">2</h1>
-							<h2 class="icon-time">minutes</h2>
-							<h3 class="icon-time">max time alone</h3>
+							<% if (context.yard_size == 'Small/Patio') { %>
+							<img src="/img/survey/patio.png" alt="" class="img-rounded">
+							<% } %>
+							<% if (context.yard_size == 'Medium') { %>
+							<img src="/img/survey/house.png" alt="" class="img-rounded">
+							<% } %>
+							<% if (context.yard_size == 'Large') { %>
+							<img src="/img/survey/tree.png" alt="" class="img-rounded">
+							<% } %>
+							<h3 class="icon-img"><%= context.yard_size %></h3>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h1 class="icon-time">2</h1>
-							<h2 class="icon-time">minutes</h2>
-							<h3 class="icon-time">max time alone</h3>
+							<% if (context.kids == '0 - 2') { %>
+							<img src="/img/survey/toddler.png" alt="" class="img-rounded">
+							<h3 class="icon-img"><%= context.kids %> years</h3>
+							<% } %>
+							<% if (context.kids == '2 - 5') { %>
+							<img src="/img/survey/baby.png" alt="" class="img-rounded">
+							<h3 class="icon-img"><%= context.kids %> years</h3>
+							<% } %>
+							<% if (context.kids == '5 - 10') { %>
+							<img src="/img/survey/family.png" alt="" class="img-rounded">
+							<h3 class="icon-img"><%= context.kids %> years</h3>
+							<% } %>
+							<% if (context.kids == '10 - 15') { %>
+							<img src="/img/survey/adult.png" alt="" class="img-rounded">
+							<h3 class="icon-img"><%= context.kids %> years</h3>
+							<% } %>
+							<% if (context.kids == 'Aults Only') { %>
+							<img src="/img/survey/adult.png" alt="" class="img-rounded">
+							<h3 class="icon-img"><%= context.kids %></h3>
+							<% } %>
 						</div>
 					</div>
 				</div>
@@ -80,37 +120,100 @@
 				<div class="row text-center">
 					<h1 class="title">Time Commitment</h1>
 				</div>
-				<!-- ICON ROW -->
+				<!-- ICON ROW :: DAILY WALKS/WEEKLY GROOMING-->
 				<div class="row icon-row">
 					<div class="col-sm-6">
 						<div class="icon-box">
+							<% if (context.walking_time == '.5') { %>
+							<h1 class="icon-time">30</h1>
+							<h2 class="icon-time">minute</h2>
+							<% } %>
+							<% if (context.walking_time == '1') { %>
+							<h1 class="icon-time">1</h1>
+							<h2 class="icon-time">hour</h2>
+							<% } %>
+							<% if (context.walking_time == '1.5') { %>
+							<h1 class="icon-time">1.5</h1>
+							<h2 class="icon-time">hour</h2>
+							<% } %>
+							<% if (context.walking_time == '2') { %>
 							<h1 class="icon-time">2</h1>
-							<h2 class="icon-time">minutes</h2>
+							<h2 class="icon-time">hour</h2>
+							<% } %>
+							<% if (context.walking_time == '3') { %>
+							<h1 class="icon-time">3</h1>
+							<h2 class="icon-time">hour</h2>
+							<% } %>
 							<h3 class="icon-time">daily walks</h3>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h1 class="icon-time">2</h1>
+							<% if (context.grooming_time == '<5') { %>
+							<h1 class="icon-time">5</h1>
 							<h2 class="icon-time">minutes</h2>
 							<h3 class="icon-time">weekly grooming</h3>
+							<% } %>
+							<% if (context.grooming_time == '15') { %>
+							<h1 class="icon-time">15</h1>
+							<h2 class="icon-time">minutes</h2>
+							<h3 class="icon-time">weekly grooming</h3>
+							<% } %>
+							<% if (context.grooming_time == '30') { %>
+							<h1 class="icon-time">30</h1>
+							<h2 class="icon-time">minutes</h2>
+							<h3 class="icon-time">weekly grooming</h3>
+							<% } %>
+							<% if (context.grooming_time == 'Non Shedding') { %>
+							<h2 class="icon-text small">Non Shedding</h2>
+							<% } %>
 						</div>
 					</div>
 				</div>
-				<!-- ICON ROW -->
+				<!-- ICON ROW :: TIME ALONE/DAILY TRAINING-->
 				<div class="row icon-row">
 					<div class="col-sm-6">
 						<div class="icon-box">
+							<% if (context.alone_time == '<2') { %>
 							<h1 class="icon-time">2</h1>
-							<h2 class="icon-time">minutes</h2>
+							<h2 class="icon-time">Hours</h2>
+							<% } %>
+							<% if (context.alone_time == '4') { %>
+							<h1 class="icon-time">4</h1>
+							<h2 class="icon-time">hours</h2>
+							<% } %>
+							<% if (context.alone_time == '6') { %>
+							<h1 class="icon-time">6</h1>
+							<h2 class="icon-time">hours</h2>
+							<% } %>
+							<% if (context.alone_time == '+8') { %>
+							<h1 class="icon-time">+8</h1>
+							<h2 class="icon-time">hours</h2>
+							<% } %>
 							<h3 class="icon-time">max time alone</h3>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h1 class="icon-time">2</h1>
+							<% if (context.training_time == '<10') { %>
+							<h1 class="icon-time">10</h1>
 							<h2 class="icon-time">minutes</h2>
 							<h3 class="icon-time">daily training</h3>
+							<% } %>
+							<% if (context.training_time == '20') { %>
+							<h1 class="icon-time">20</h1>
+							<h2 class="icon-time">minutes</h2>
+							<h3 class="icon-time">daily training</h3>
+							<% } %>
+							<% if (context.training_time == '+30') { %>
+							<h1 class="icon-time">30</h1>
+							<h2 class="icon-time">minutes</h2>
+							<h3 class="icon-time">daily training</h3>
+							<% } %>
+							<% if (context.training_time == 'prefer-adult') { %>
+							<img src="/img/survey/dog_adult.png" alt="" class="img-rounded">
+							<h3 class="icon-img"><%= context.training_time %></h3>
+							<% } %>
 						</div>
 					</div>
 				</div>
@@ -118,8 +221,7 @@
 		</div>
 		<div class="row">
 
-
-			<!-- DOG PREFERENCES -->
+			<!-- DOG PREFERENCES :: GENDER/DOGSIZE-->
 			<div class="col-sm-6 question-container">
 				<!-- TITLE ROW -->
 				<div class="row text-center">
@@ -129,14 +231,33 @@
 				<div class="row icon-row">
 					<div class="col-sm-6">
 						<div class="icon-box">
+							<% if (context.gender == 'Male') { %>
 							<img src="/img/survey/male.png" alt="" class="img-rounded">
-							<h3 class="icon-img">Companion</h3>
+							<% } %>
+							<% if (context.gender == 'Female') { %>
+							<img src="/img/survey/female.png" alt="" class="img-rounded">
+							<% } %>
+							<% if (context.gender == 'No Preference') { %>
+							<img src="/img/survey/no-gender-pref.png" alt="" class="img-rounded">
+							<% } %>
+							<h3 class="icon-img"><%= context.gender %></h3>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h2 class="icon-text">Toy</h2>
+							<h2 class="icon-text"><%= context.dog_size %></h2>
+							<% if (context.dog_size == 'Toy') { %>
 							<h3 class="icon-text">5-15lbs</h3>
+							<% } %>
+							<% if (context.dog_size == 'Small') { %>
+							<h3 class="icon-text">15-30lbs</h3>
+							<% } %>
+							<% if (context.dog_size == 'Medium') { %>
+							<h3 class="icon-text">30-50lbs</h3>
+							<% } %>
+							<% if (context.dog_size == 'Large') { %>
+							<h3 class="icon-text">+50lbs</h3>
+							<% } %>
 						</div>
 					</div>
 				</div>
@@ -153,13 +274,13 @@
 				<div class="row icon-row">
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h2 class="icon-text">$150</h2>
+							<h2 class="icon-text"><%= context.monthly_price %></h2>
 							<h3 class="icon-text">Monthly</h3>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h2 class="icon-text">$1k</h2>
+							<h2 class="icon-text"><%= context.purchase_price %></h2>
 							<h3 class="icon-text">Purchase</h3>
 						</div>
 					</div>
