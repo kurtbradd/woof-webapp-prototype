@@ -38,8 +38,6 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		$scope.percentComplete = function () {
 			return "width: " + (($scope.step-1)/12.0)*100 + "%;";
 		};
-
-		// $scope.percentComplete = "width: " + $scope.step/12 + "%;";
 		
 		$scope.getCurrentStep = function() {
 			return $scope.steps[$scope.step];
@@ -71,15 +69,16 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 		
 		$scope.submit = function () {
-			// if (!$scope.formComplete) {
+			if (!$scope.formComplete) {
 				ServerSubmit.submit()
 				.success(function(data, status, headers, config) {
 					$scope.formComplete = true;
+					$scope.cancel();
 					console.log(data);
 				})
 				.error(function(data, status, headers, config) {
 					console.log(data);
 				});
-			// }
+			}
 		}
 }]);
