@@ -46,7 +46,7 @@
 							<h2 class="icon-text">Yes!</h2>
 							<h3 class="icon-text">I've had a pet before!</h3>
 							<% } %>
-							<% if (context.previous_dog == 'Not Yet') { %>
+							<% if (context.previous_dog == 'Not yet') { %>
 							<h2 class="icon-text">Dogs</h2>
 							<h3 class="icon-text">This is my first pet!</h3>
 							<% } %>
@@ -104,7 +104,7 @@
 							<img src="/img/survey/adult.png" alt="" class="img-rounded">
 							<h3 class="icon-img"><%= context.kids %> years</h3>
 							<% } %>
-							<% if (context.kids == 'Aults Only') { %>
+							<% if (context.kids == 'Adults Only') { %>
 							<img src="/img/survey/adult.png" alt="" class="img-rounded">
 							<h3 class="icon-img"><%= context.kids %></h3>
 							<% } %>
@@ -245,7 +245,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<h2 class="icon-text"><%= context.dog_size %></h2>
+							<h2 class="icon-text small"><%= context.dog_size %></h2>
 							<% if (context.dog_size == 'Toy') { %>
 							<h3 class="icon-text">5-15lbs</h3>
 							<% } %>
