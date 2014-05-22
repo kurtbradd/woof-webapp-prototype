@@ -57,8 +57,13 @@ else {
 				context = {
 					pdf_path:user.pdf_path
 				}
-				console.log(user.pdf_path);
-				mailer.renderEmail('prescreenTemplate.html', context, function(error, html) {
+
+				if (!job.data.mailerTemplate) {
+					done && done ('no mail template included');
+					return;
+				}
+
+				mailer.renderEmail(job.data.mailerTemplate, context, function(error, html) {
 					if (error) {
 						done && done (error)
 						return;

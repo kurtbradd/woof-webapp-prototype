@@ -30,8 +30,8 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 					return 'col-xs-4';
 				case 4:
 					return 'col-xs-3';
-				case 5:
-					return 'icon-column';
+				case 6:
+					return 'col-xs-2';
 			}
 		};
 

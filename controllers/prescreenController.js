@@ -12,6 +12,15 @@ exports.form = function (req, res) {
 	user.email_sent = false;
 	user.pdf_created = false;
 	user.questions = questions;
+	
+	price = questions['what is your max purchasing price?'];
+	price = parseFloat(price.replace('$',''));
+	emailTemplate = '';
+	if (price == 250) {
+		mailerTemplate = 'prescreenTemplateSub500.html'
+	} else {
+		mailerTemplate = 'prescreenTemplateMoreThan500.html'
+	}
 
 	//save to db
 	user.save(function(err, user) {
@@ -23,7 +32,8 @@ exports.form = function (req, res) {
 		var job = {
 			id:user._id,
 			email:user.email,
-			questions:user.questions
+			questions:user.questions,
+			mailerTemplate:mailerTemplate
 		}
 		jobQueue.renderPDF(job);
 	});

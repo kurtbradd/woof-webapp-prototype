@@ -1,3 +1,6 @@
+p a {
+	color: inherit;
+}
 
 .modalDialog {
 	position: fixed;
@@ -20,7 +23,8 @@
 }
 
 .modalDialog > div {
-	width: 400px;
+	/*width: 400px;*/
+	max-width: 400px;
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
@@ -31,22 +35,22 @@
 	background: -o-linear-(#fff);
 }
 .close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
+	/*background: #606061;*/
+	/*color: #FFFFFF;*/
+	line-height: 35px;
+	/*position: absolute;*/
 	right: -12px;
 	text-align: center;
 	top: -5px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
+	width: 35px;
+	/*text-decoration: none;*/
+	/*font-weight: bold;
 	-webkit-border-radius: 112px;
 	-moz-border-radius: 112px;
 	border-radius: 112px;
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;*/
 }
 
 .close:hover { background: #00d9ff; }

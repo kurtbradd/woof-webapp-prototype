@@ -70,6 +70,10 @@ module.factory('SurveyQuestions', ['$http', function($http){
 			answer: {},
 			options:[{
 				type:'TextBox',
+				title:'15',
+				sub_title:'minutes'
+			},{
+				type:'TextBox',
 				title:'.5',
 				sub_title:"hour"
 			},{
@@ -193,18 +197,14 @@ module.factory('SurveyQuestions', ['$http', function($http){
 			options:[{
 				type:'IconBox',
 				icon_name:'toddler',
-				title:'Kids: 0 - 2'
+				title:'Kids: 0 - 4'
 			},{
 				type:'IconBox',
 				icon_name:'baby',
-				title:'Kids: 2 - 5'
+				title:'Kids: 4 - 10'
 			},{
 				type:'IconBox',
 				icon_name:'family',
-				title:'Kids: 5 - 10'
-			},{
-				type:'IconBox',
-				icon_name:'adult',
 				title:'Kids: 10 - 15'
 			},{
 				type:'IconBox',
@@ -216,6 +216,10 @@ module.factory('SurveyQuestions', ['$http', function($http){
 			title:'What is your max purchasing price?',
 			answer:{},
 			options :[{
+				type:'TextBox',
+				title:'$250',
+				sub_title:'and up'
+			},{
 				type:'TextBox',
 				title:'$500',
 				sub_title:'and up'
@@ -231,6 +235,10 @@ module.factory('SurveyQuestions', ['$http', function($http){
 				type:'TextBox',
 				title:'$1.5k',
 				sub_title:"and up"
+			},{
+				type:'TextBox',
+				title:'$2k',
+				sub_title:'and up'
 			}]
 		},
 		monthly_budget : {
@@ -238,7 +246,15 @@ module.factory('SurveyQuestions', ['$http', function($http){
 			answer:{},
 			options:[{
 				type:'TextBox',
+				title:'$25',
+				sub_title:"monthly"
+			},{
+				type:'TextBox',
 				title:'$50',
+				sub_title:"monthly"
+			},{
+				type:'TextBox',
+				title:'$75',
 				sub_title:"monthly"
 			},{
 				type:'TextBox',
