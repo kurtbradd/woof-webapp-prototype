@@ -216,58 +216,46 @@ module.factory('SurveyQuestions', ['$http', function($http){
 			title:'What is your max purchasing price?',
 			answer:{},
 			options :[{
-				type:'TextBox',
-				title:'$250',
-				sub_title:'and up'
+				type:'TitleBox',
+				title:'$250'
 			},{
-				type:'TextBox',
-				title:'$500',
-				sub_title:'and up'
+				type:'TitleBox',
+				title:'$500'
 			},{
-				type:'TextBox',
-				title:'$750',
-				sub_title:'and up'
+				type:'TitleBox',
+				title:'$750'
 			},{
-				type:'TextBox',
-				title:'$1k',
-				sub_title:'and up'
+				type:'TitleBox',
+				title:'$1k'
 			},{
-				type:'TextBox',
-				title:'$1.5k',
-				sub_title:"and up"
+				type:'TitleBox',
+				title:'$1.5k'
 			},{
-				type:'TextBox',
-				title:'$2k',
-				sub_title:'and up'
+				type:'TitleBox',
+				title:'$2k'
 			}]
 		},
 		monthly_budget : {
 			title:'What is your ideal monthly budget?',
 			answer:{},
 			options:[{
-				type:'TextBox',
-				title:'$25',
-				sub_title:"monthly"
+				type:'TitleBox',
+				title:'$25'
 			},{
-				type:'TextBox',
-				title:'$50',
-				sub_title:"monthly"
+				type:'TitleBox',
+				title:'$50'
 			},{
-				type:'TextBox',
-				title:'$75',
-				sub_title:"monthly"
+				type:'TitleBox',
+				title:'$75'
 			},{
-				type:'TextBox',
-				title:'$100',
-				sub_title:"monthly"
+				type:'TitleBox',
+				title:'$100'
 			},{
-				type:'TextBox',
-				title:'$150',
-				sub_title:"monthly"
+				type:'TitleBox',
+				title:'$150'
 			},{
-				type:'TextBox',
-				title:'$200',
-				sub_title:"monthly"
+				type:'TitleBox',
+				title:'$200'
 			}]
 		}
 	}//end-return;
