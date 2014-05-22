@@ -201,7 +201,7 @@ module.factory('SurveyQuestions', ['$http', function($http){
 			},{
 				type:'IconBox',
 				icon_name:'baby',
-				title:'Kids: 4 - 8'
+				title:'Kids: 4 - 10'
 			},{
 				type:'IconBox',
 				icon_name:'family',

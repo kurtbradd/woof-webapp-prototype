@@ -88,20 +88,16 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="icon-box">
-							<% if (context.kids == '0 - 2') { %>
+							<% if (context.kids == '0 - 4') { %>
 							<img src="/img/survey/toddler.png" alt="" class="img-rounded">
 							<h3 class="icon-img"><%= context.kids %> years</h3>
 							<% } %>
-							<% if (context.kids == '2 - 5') { %>
+							<% if (context.kids == '4 - 10') { %>
 							<img src="/img/survey/baby.png" alt="" class="img-rounded">
 							<h3 class="icon-img"><%= context.kids %> years</h3>
 							<% } %>
-							<% if (context.kids == '5 - 10') { %>
-							<img src="/img/survey/family.png" alt="" class="img-rounded">
-							<h3 class="icon-img"><%= context.kids %> years</h3>
-							<% } %>
 							<% if (context.kids == '10 - 15') { %>
-							<img src="/img/survey/adult.png" alt="" class="img-rounded">
+							<img src="/img/survey/family.png" alt="" class="img-rounded">
 							<h3 class="icon-img"><%= context.kids %> years</h3>
 							<% } %>
 							<% if (context.kids == 'Adults Only') { %>
@@ -124,6 +120,10 @@
 				<div class="row icon-row">
 					<div class="col-sm-6">
 						<div class="icon-box">
+							<% if (context.walking_time == '15') { %>
+							<h1 class="icon-time">15</h1>
+							<h2 class="icon-time">minute</h2>
+							<% } %>
 							<% if (context.walking_time == '.5') { %>
 							<h1 class="icon-time">30</h1>
 							<h2 class="icon-time">minute</h2>
