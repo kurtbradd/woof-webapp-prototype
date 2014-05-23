@@ -8,7 +8,7 @@
 <form name="userForm" ng-submit="submit()" novalidate>
 	<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
 		<div class="input-group">
-				<input type="email" name="email" class="form-control" ng-model="questions.email.answer">
+				<input type="email" name="email" placeholder="Enter email here" class="form-control" ng-model="questions.email.answer">
 				<span class="input-group-btn">
 					<button class="btn btn-default" type="submit">Enter</button>
 				</span>

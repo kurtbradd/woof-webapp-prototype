@@ -4,7 +4,7 @@ module.factory('SurveyQuestions', ['$http', function($http){
 	return {
 		email:{
 			title:'Email',
-			answer:{}
+			answer:''
 		},
 		past_dog : {
 			title: 'Have you had a dog before?',
