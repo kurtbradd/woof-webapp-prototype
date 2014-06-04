@@ -15,6 +15,11 @@
 				<div ng-switch-when="email">
 					<div ng-include="'/views/partials/email-submission.html'"></div>
 				</div>
+
+				<!-- When Thank-You Page -->
+				<div ng-switch-when="thanks">
+					<div ng-include="'/views/partials/thank-you.html'"></div>
+				</div>
 				
 				<!-- When Other Page -->
 				<div class="ng-switch-default">
