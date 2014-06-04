@@ -122,6 +122,11 @@ html {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+.blue-hover:focus {
+  background-color: rgb(58, 169, 219);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 .larger {
   width: 50%;
   margin: 0 auto;
