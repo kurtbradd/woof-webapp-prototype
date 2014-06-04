@@ -8,15 +8,12 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		$scope.steps = [
 		'welcome', 'past_dog', 'activities', 'dog_size', 'daily_walks',
 		'training_time', 'grooming', 'time_alone', 'yard_size',
-		'gender', 'kids', 'purchase_price', 'monthly_budget', 'email'];
-
-		$scope.formComplete = false;
+		'gender', 'kids', 'purchase_price', 'monthly_budget', 'email', 'thanks'];
 
 		//index of answer in question options
 		$scope.saveAnswer = function (question, $index) {
 			answer = SurveyQuestions[question].options[$index].title;
 			SurveyQuestions[question].answer = answer;
-			//console.log(SurveyQuestions[question]);
 			this.handleNext();
 		}
 
@@ -34,6 +31,10 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 					return 'col-xs-2';
 			}
 		};
+		var url = '//twitter.com/intent/tweet?text=I%27m%20excited%20to%20get%20my%20new%20dog%20from%20Woof!&url=http%3A%2F%2Fwww.wooflabs.com&via=MyDogWoofs';
+		$scope.shareOnTwitter = function() {
+			console.log('called');
+  	};
 
 		$scope.percentComplete = function () {
 			return "width: " + (($scope.step-1)/12.0)*100 + "%;";
@@ -48,7 +49,6 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 
 		$scope.cancel = function () {
-			$scope.formComplete = false;
 			$scope.step = 0;
 		}
 
@@ -61,19 +61,15 @@ module.controller('LandingPageCtrl', ['$scope', '$modal', 'ServerSubmit', 'Surve
 		};
 
 		$scope.handleNext = function() {
-			if($scope.isLastStep()) {
-				this.submit();
-			} else {
-				$scope.step += 1;
-			}
+			$scope.step += 1;
 		};
 		
 		$scope.submit = function () {
-			if (!$scope.formComplete) {
+			if (SurveyQuestions.email.answer.length > 0) {
 				ServerSubmit.submit()
 				.success(function(data, status, headers, config) {
-					$scope.formComplete = true;
-					$scope.cancel();
+					console.log('server success');
+					$scope.step += 1;
 					console.log(data);
 				})
 				.error(function(data, status, headers, config) {
